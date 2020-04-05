@@ -1,0 +1,23 @@
+#!/usr/bin/php
+<?php
+/* Create a new draft */
+$files = array_diff(scandir("."), [".","..","dew"]);
+rsort($files);
+$new_file_name = @++$files[0];
+$timestamp = kurdish_num(time());
+$to_write = "سەرناو: \nڕێکەوت: {$timestamp}\n\n";
+file_put_contents($new_file_name, $to_write);
+echo "-> {$new_file_name}\n";
+
+function kurdish_num ($str) {
+    return str_replace(
+	["0","1","2","3","4","5","6","7","8","9"],
+	["٠","١","٢","٣","٤","٥","٦","٧","٨","٩"],
+	$str);
+}
+/*
+* Local Variables:
+* mode: web
+* End:
+*/
+?>
