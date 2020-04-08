@@ -5,7 +5,7 @@ $files = array_diff(scandir("."), [".","..","dew"]);
 rsort($files);
 $new_file_name = @++$files[0];
 $timestamp = kurdish_num(time());
-$to_write = "سەرناو: \nڕێکەوت: {$timestamp}\n\n";
+$to_write = "سەرناو\t\nڕێکەوت\t{$timestamp}\n\n\t";
 file_put_contents($new_file_name, $to_write);
 echo "-> {$new_file_name}\n";
 
@@ -16,8 +16,8 @@ function kurdish_num ($str) {
 	$str);
 }
 /*
-* Local Variables:
-* mode: web
-* End:
-*/
+ * Local Variables:
+ * mode: web
+ * End:
+ */
 ?>
