@@ -5,6 +5,7 @@
 	کە مەحاڵە!
 	تا ئێستا بەوەی گەییشتوم:
 
-	(!(is_x(str, ["و","وو"]) || (is_x(prev_ch, ch_v) && !next_v)) && 
+	(!(is_x(str, ["و","وو"]) || (prev_ch == ch_v && !next_v)) && 
 	   (pos == 0 || prev_v || next_v ||
-	    (pos !== 1 && prev_ch != ch_n && is_x(ch+next_ch, ["وی","یو"]) && !is_x(L(str, pos+2), v))))
+	    (prev_ch != ch_n && (ch+next_ch) == "وی" &&
+	     !is_v(L(str, pos+2)) && pos !== 1)))
