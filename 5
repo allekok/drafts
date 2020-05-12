@@ -4,9 +4,10 @@
 	وا دێتە بەرچاو کە ئەم کارە زۆر ئاسان بێ. بەڵام دوای ماوەیەک تێ دەگەیین
 	کە مەحاڵە!
 	تا ئێستا بەوەی گەییشتووم:
-
+	
 	if(!(is_x(str, ["و","وو","ی","یی"]) ||
 	   (prev_ch == ch_v && !next_v && ch_v != L(str, pos-2))) && 
 	      (pos == 0 || prev_v || next_v ||
 	         (prev_ch != ch_n && !is_v(L(str, pos+2)) && pos !== 1 &&
-		    (is_v(L(str, pos-2)) && prev_ch == "y"))))
+		    (is_v(L(str, pos-2)) && prev_ch == "y")))) /* CONSONANT */
+	else /* VOWEL */
