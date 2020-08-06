@@ -1,7 +1,7 @@
 #!/usr/bin/php
 <?php
 /* Create a new draft */
-$files = array_diff(scandir("."), [".","..","dew"]);
+$files = array_diff(scandir("."), [".","..","dew","LICENSE"]);
 rsort($files);
 $new_file_name = 1 + @intval($files[0]);
 $timestamp = kurdish_num(time());
