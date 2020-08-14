@@ -1,0 +1,11 @@
+سەرناو	display: standalone
+ڕێکەوت	١٥٩٧٤١٠٤١١
+
+	ئەگەر دەوهەوێ ماڵپەڕەکەتان وەکوو ئەپێکی ئەندرۆید ئیجرا ببێ نەک لەنێو
+	تەبێکی وێبگەڕەکەتان، لازمە فایلێکی مانیفێست ساز کەن. لەبەشی <head>ی
+	فایلی indexی htmlەکەتان بنووسن:
+	<link rel="manifest" href="site.webmanifest">
+	دوایە لە فایلی site.webmanifest دەبێ بەرامبەر optionی display بنووسن
+	standalone.
+	بۆ نموونە سەیری فایلی وێب‌مانیفێستی ئاڵەکۆک بکەن:
+	https://allekok.ir/favicon/site.webmanifest
