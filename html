@@ -1,0 +1,41 @@
+#!/usr/bin/php
+<?php
+$html = "<html dir=rtl>
+<head>
+<meta charset='utf-8'>
+<style>
+pre { 
+white-space:pre-wrap;
+word-wrap:break-word;
+padding:1em;
+border-bottom:10px dashed #eee;
+}
+</style>
+</head>
+<body>
+<header>
+رەشنووسەکانم |
+<a href='https://github.com/allekok/drafts'>کۆد</a> |
+<a href='LICENSE'>مافی کۆپی</a>
+</header>";
+$output = "index.html";
+
+$inputs = array_diff(scandir("."),
+		     [".","..","dew","LICENSE","html",".git","index.html"]);
+rsort($inputs);
+
+foreach($inputs as $input) {
+	$content = file_get_contents($input);
+	$html .= "<pre>$content</pre>";
+}
+
+$html .= "</body></html>";
+
+file_put_contents($output, $html);
+
+/*
+ * Local Variables:
+ * mode: web
+ * End:
+ */
+?>
