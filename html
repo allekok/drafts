@@ -26,6 +26,7 @@ rsort($inputs);
 
 foreach($inputs as $input) {
 	$content = file_get_contents($input);
+	$content = htmlspecialchars($content);
 	$html .= "<pre>$content</pre>";
 }
 
