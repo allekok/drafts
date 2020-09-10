@@ -1,12 +1,31 @@
 <html dir=rtl>
 <head>
 <meta charset='utf-8'>
+<meta name='viewport' content='width=device-width'>
 <style>
-pre { 
-white-space:pre-wrap;
+body {
+margin:1em;
+font-size:1.15em;
+}
+a {
+color:#00E;
+text-decoration:none;
+}
+header {
+font-size:1.3em;
+}
+pre {
+white-space:pre-line;
 word-wrap:break-word;
 padding:1em;
-border-bottom:10px dashed #eee;
+border:.15em solid;
+border-radius:2em;
+margin-top:2em;
+font-size:1.1em;
+}
+ltr {
+direction:ltr;
+display:block;
 }
 </style>
 </head>
@@ -21,11 +40,15 @@ border-bottom:10px dashed #eee;
 	ئەگەر دەوهەوێ ماڵپەڕەکەتان وەکوو ئەپێکی ئەندرۆید ئیجرا ببێ نەک لەنێو
 	تەبێکی وێبگەڕەکەتان، لازمە فایلێکی مانیفێست ساز کەن. لەبەشی &lt;head&gt;ی
 	فایلی indexی htmlەکەتان بنووسن:
+	<ltr>
 	&lt;link rel=&quot;manifest&quot; href=&quot;site.webmanifest&quot;&gt;
+	</ltr>
 	دوایە لە فایلی site.webmanifest دەبێ بەرامبەر optionی display بنووسن
 	standalone.
 	بۆ نموونە سەیری فایلی وێب‌مانیفێستی ئاڵەکۆک بکەن:
+	<ltr>
 	https://allekok.ir/favicon/site.webmanifest
+	</ltr>
 </pre><pre>سەرناو	باسێک لەسەر ئاڵەکۆک
 ڕێکەوت	١٥٩٦٧٢٥١٧٢
 
@@ -100,7 +123,9 @@ border-bottom:10px dashed #eee;
 
 	بۆ وەی کە وێنەی وێبکەمەکەتان لە نێو فرەیمێک‌دا نیشان دەن، دەتوانن لە
 	ffplay کەڵک وەرگرن. بەو شێوە:
+	<ltr>
 	ffplay -f video4linux2 -i /dev/video0 -s [WxH]
+	</ltr>
 	ffplay لە پەکەیجی ffmpeg دایە.
 </pre><pre>سەرناو	ئەلفوبێی کوردی
 ڕێکەوت	١٥٨٩١٢١٥٢٥
@@ -185,7 +210,9 @@ border-bottom:10px dashed #eee;
 	لە سەر کامپیوتێڕی من کە Operating System ـەکەی Arch linux ـە، ١٤ جۆر
 	کیبۆردی کوردی لەسەرە! ئەم کیبۆردانە بەشێکن لە پەکەیجی xkeyboard-config.
 	ئادرسی ڕیپۆیەکەیان لاپەڕەی خوارەوەیە:
+	<ltr>
 	https://gitlab.freedesktop.org/xkeyboard-config/xkeyboard-config
+	</ltr>
 	نازانم دەبێ چی لێ بکەم...
 	جا دوایە بۆ کوردی سۆرانی دوو جۆر ئەلفوبێ هەیە کە ئەڵبەتە فەرقێکی
 	ئەوهایان نییە. پێم وا بێ تەنیا جیاوازیان پیتی 'هـ'یە. دڵنیا نیم. بەڵام
@@ -193,7 +220,9 @@ border-bottom:10px dashed #eee;
 	http://unicode.ekrg.org
 	دووهەمیان لەلایەن ویکیپیدیای کوردییە. کە لە لاپەڕەی خوارەوەدا باسیان لێ
 	کردووە:
+	<ltr>
 	https://ckb.wikipedia.org/wiki/%D9%88%DB%8C%DA%A9%DB%8C%D9%BE%DB%8C%D8%AF%DB%8C%D8%A7:%D9%86%D9%88%D9%88%D8%B3%DB%8C%D9%86%DB%8C_%DA%A9%D9%88%D8%B1%D8%AF%DB%8C
+	</ltr>
 	کە بە بڕوای من ئەو گۆڕانکاریانەی ویکیپیدیای کوردی زۆر بەجێیە.
 	هەوڵی بوونی یەک کیبۆردی کوردی یان نهایەتەن دوو دانە(ئارامی، لاتین)
 	لەکاتی دامەزراندنی Linux و پەکەیجی X Server دا ئاواتی منە، بەڵام لە
@@ -229,6 +258,7 @@ border-bottom:10px dashed #eee;
 	وا دێتە بەرچاو کە ئەم کارە زۆر ئاسان بێ. بەڵام دوای ماوەیەک تێ دەگەیین
 	کە مەحاڵە!
 	تا ئێستا بەوەی گەییشتووم:
+	<ltr>
 	
 	if(!(is_x(str, [&quot;و&quot;,&quot;وو&quot;,&quot;ی&quot;,&quot;یی&quot;]) ||
 	   (prev_ch == ch_v &amp;&amp; !next_v &amp;&amp; ch_v != L(str, pos-2))) &amp;&amp; 
@@ -236,6 +266,7 @@ border-bottom:10px dashed #eee;
 	         (prev_ch != ch_n &amp;&amp; !is_v(L(str, pos+2)) &amp;&amp; pos !== 1 &amp;&amp;
 		    (is_v(L(str, pos-2)) &amp;&amp; prev_ch == &quot;y&quot;)))) /* CONSONANT */
 	else /* VOWEL */
+	</ltr>
 </pre><pre>سەرناو	کامپیوتێڕ بەکەڵکی چ دێ؟
 ڕێکەوت	١٥٨٦٧١٦٩٥٠
 
@@ -250,7 +281,9 @@ border-bottom:10px dashed #eee;
 	لە خەتتی دوای وی ڕا دەست بە نووسین بکەن. سەرنج بدەن کە ئەگەر تەنیا ' '
 	لە ئاخیری خەتتەکەدا بەکاربێنن، کارێ ناکا و حەتمەن دەبێ خەتێک بەجێ بێڵن.
 	ئەو نوکتەی لە ئەم لاپەڕەدا فێر بووم:
+	<ltr>
 	https://github.com/layik/git-kurdi/blob/master/README.md
+	</ltr>
 </pre><pre>سەرناو	سەرچاوەی دراوە(Data) بۆ زمانی کوردی
 ڕێکەوت	١٥٨٦٢٣٣٩٣٤
 
@@ -278,6 +311,8 @@ border-bottom:10px dashed #eee;
 	دەدەم.
 	یان دەتوانن یەکێک لەو هەزاران لایسەنسە(License) بەناوبانگانەی هەن
 	بەکاربێنن. وەکوو: لایسەنسی MIT یان GPL یان ... . بۆ زانیاری زیاتر سەردانێکی
-	لاپەڕەی خوارەوە بکەن:
+	لاپەڕەی خوارەوە بکەن:	
+	<ltr>
 	https://choosealicense.com
+	</ltr>
 </pre></body></html>

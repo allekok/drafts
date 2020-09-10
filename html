@@ -3,12 +3,31 @@
 $html = "<html dir=rtl>
 <head>
 <meta charset='utf-8'>
+<meta name='viewport' content='width=device-width'>
 <style>
-pre { 
-white-space:pre-wrap;
+body {
+margin:1em;
+font-size:1.15em;
+}
+a {
+color:#00E;
+text-decoration:none;
+}
+header {
+font-size:1.3em;
+}
+pre {
+white-space:pre-line;
 word-wrap:break-word;
 padding:1em;
-border-bottom:10px dashed #eee;
+border:.15em solid;
+border-radius:2em;
+margin-top:2em;
+font-size:1.1em;
+}
+ltr {
+direction:ltr;
+display:block;
 }
 </style>
 </head>
@@ -27,6 +46,8 @@ rsort($inputs);
 foreach($inputs as $input) {
 	$content = file_get_contents($input);
 	$content = htmlspecialchars($content);
+	$content = str_replace(["&lt;ltr&gt;", "&lt;/ltr&gt;"],
+			       ["<ltr>", "</ltr>"], $content);
 	$html .= "<pre>$content</pre>";
 }
 

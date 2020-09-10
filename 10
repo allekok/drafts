@@ -3,5 +3,7 @@
 
 	بۆ وەی کە وێنەی وێبکەمەکەتان لە نێو فرەیمێک‌دا نیشان دەن، دەتوانن لە
 	ffplay کەڵک وەرگرن. بەو شێوە:
+	<ltr>
 	ffplay -f video4linux2 -i /dev/video0 -s [WxH]
+	</ltr>
 	ffplay لە پەکەیجی ffmpeg دایە.
