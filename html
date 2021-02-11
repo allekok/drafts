@@ -6,16 +6,22 @@ $html = "<html dir=rtl>
 <meta charset='utf-8'>
 <meta name='viewport' content='width=device-width'>
 <style>
+@font-face {
+font-display:swap;
+font-family:'nesx';
+src:url('//allekok.github.io/src/frontend/style/DroidNaskh-Regular.woff2') format('woff2');
+}
 body {
 margin:.5em;
 font-size:1em;
+font-family:'nesx';
 }
 a {
-color:#06D;
+color:#090;
 text-decoration:none;
 }
 header {
-
+margin:2em 1em;
 }
 header h1 {
 font-size:2em;
@@ -30,14 +36,18 @@ white-space:pre-wrap;
 word-wrap:break-word;
 padding:1em;
 margin:.5em 2em .5em 0;
-font-size:1.1em;
-font-family:auto;
+font-size:1em;
+font-family:inherit;
+line-height:2.5;
+border:2px solid #090;
 }
 pre:nth-child(even) {
-border-right:10px solid #06D;
+border-right:10px solid #090;
+border-radius:1em 0 0 1em;
 }
 pre:nth-child(odd) {
-border-left:10px solid #06D;
+border-left:10px solid #090;
+border-radius:0 1em 1em 0;
 }
 ltr {
 direction:ltr;
