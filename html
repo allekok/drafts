@@ -1,6 +1,7 @@
 #!/usr/bin/php
 <?php
-$html = "<html dir=rtl>
+$html = "<!DOCTYPE html>
+<html dir='rtl' lang='ckb'>
 <head>
 <title>ڕەشنووسەکانی ئاڵەکۆک</title>
 <meta charset='utf-8'>
@@ -62,15 +63,16 @@ margin-top:-.5em;
 </header>";
 $output = "index.html";
 
-$inputs = array_diff(scandir("."),
-		     [".","..","dew","LICENSE","html",".git","index.html"]);
+$inputs = array_diff(scandir("."), [".", "..", "dew", "LICENSE",
+				    "html", ".git", "index.html"]);
 rsort($inputs);
 
 foreach($inputs as $input) {
 	$content = file_get_contents($input);
 	$content = htmlspecialchars($content);
 	$content = str_replace(["&lt;ltr&gt;", "&lt;/ltr&gt;"],
-			       ["<ltr>", "</ltr>"], $content);
+			       ["<ltr>", "</ltr>"],
+			       $content);
 	$html .= "<pre id='$input'>";
 	$html .= "<a class='link' href='#$input'>#</a>";
 	$html .= "$content";
