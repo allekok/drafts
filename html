@@ -1,5 +1,6 @@
 #!/usr/bin/php
 <?php
+$output = "index.html";
 $html = "<!DOCTYPE html>
 <html dir='rtl' lang='ckb'>
 <head>
@@ -13,8 +14,7 @@ font-family:'nesx';
 src:url('//allekok.github.io/src/frontend/style/DroidNaskh-Regular.woff2') format('woff2');
 }
 body {
-margin:.5em;
-font-size:1em;
+margin:.5rem;
 font-family:'nesx';
 }
 a {
@@ -22,36 +22,34 @@ color:#090;
 text-decoration:none;
 }
 header {
-margin:2em 1em;
+margin:2rem 1rem;
 }
 header h1 {
-font-size:2em;
+font-size:2rem;
 margin:0;
 font-weight:normal;
 }
 header h1 sup {
-font-size:.7em;
+font-size:1.2rem;
 }
-pre {
-white-space:pre-wrap;
+article {
 word-wrap:break-word;
-padding:1em;
-margin:.5em auto;
-font-size:1em;
-font-family:inherit;
-line-height:2.5;
-border:.7em solid #444;
-border-radius:.5em;
-max-width:800px;
+padding:1rem;
+margin:1rem auto;
+line-height:3;
+border:.75rem solid #444;
+border-radius:2rem;
+max-width:1000px;
 }
-ltr {
-direction:ltr;
+article h1 {
+margin-top:0;
+}
+.ltr {
 display:block;
-}
-.link {
-float:left;
-font-size:2em;
-margin-top:-.5em;
+direction:ltr;
+text-align:left;
+font-family:monospace, 'nesx';
+font-size:1rem;
 }
 </style>
 </head>
@@ -61,27 +59,42 @@ margin-top:-.5em;
 <sup><a href='https://github.com/allekok/drafts'>کۆد</a></sup>
 </h1>
 </header>";
-$output = "index.html";
 
 $inputs = array_diff(scandir("."), [".", "..", "dew", "LICENSE",
 				    "html", ".git", "index.html"]);
 rsort($inputs);
 
 foreach($inputs as $input) {
-	$content = file_get_contents($input);
-	$content = htmlspecialchars($content);
-	$content = str_replace(["&lt;ltr&gt;", "&lt;/ltr&gt;"],
-			       ["<ltr>", "</ltr>"],
+	$f = fopen($input, "r");
+	$title = explode("\t", read_line($f))[1];
+	$time = explode("\t", read_line($f))[1];
+	$content = read_file($f);
+	fclose($f);
+	$content = str_replace(["&lt;ltr&gt;", "&lt;/ltr&gt;", "\n\n"],
+			       ["<span class='ltr'>", "</span>", "<br>"],
 			       $content);
-	$html .= "<pre id='$input'>";
-	$html .= "<a class='link' href='#$input'>#</a>";
-	$html .= "$content";
-	$html .= "</pre>";
+	$html .= "<article id='$input'>" .
+		 "<a class='link' href='#$input'>" .
+		 "<h1>$title</h1>" .
+		 "</a>" .
+		 "<p>$content</p>" .
+		 "</article>";
 }
 
 $html .= "</body></html>";
 
 file_put_contents($output, $html);
+
+/* Functions */
+function read_line($f) {
+	return htmlspecialchars(fgets($f));
+}
+function read_file($f) {
+	$content = "";
+	while(!feof($f))
+		$content .= read_line($f);
+	return $content;
+}
 
 /*
  * Local Variables:
