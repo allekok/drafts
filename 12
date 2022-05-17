@@ -1,19 +1,19 @@
 سەرناو	display: standalone
 ڕێکەوت	١٥٩٧٤١٠٤١١
 
-	ئەگەر دەوهەوێ ماڵپەڕەکەتان وەکوو ئەپێکی ئەندرۆید ئیجرا ببێ نەک
-	لەنێو تەبێکی وێبگەڕەکەتان، لازمە فایلێکی مانیفێست ساز
-	کەن. لەبەشی <head>ی فایلی indexی htmlەکەتان بنووسن:
+ئەگەر دەوهەوێ ماڵپەڕەکەتان وەکوو ئەپێکی ئەندرۆید ئیجرا ببێ نەک لەنێو
+تەبێکی وێبگەڕەکەتان، لازمە فایلێکی مانیفێست ساز کەن. لەبەشی <head>ی
+فایلی indexی htmlەکەتان بنووسن:
 
-	<ltr>
-	<link rel="manifest" href="site.webmanifest">
-	</ltr>
+<ltr>
+<link rel="manifest" href="site.webmanifest">
+</ltr>
 
-	دوایە لە فایلی site.webmanifest دەبێ بەرامبەر optionی display
-	بنووسن standalone.
+دوایە لە فایلی site.webmanifest دەبێ بەرامبەر optionی display بنووسن
+standalone.
 
-	بۆ نموونە سەیری فایلی وێب‌مانیفێستی ئاڵەکۆک بکەن:
+بۆ نموونە سەیری فایلی وێب‌مانیفێستی ئاڵەکۆک بکەن:
 
-	<ltr>
-	https://allekok.ir/favicon/site.webmanifest
-	</ltr>
+<ltr>
+https://allekok.ir/favicon/site.webmanifest
+</ltr>
