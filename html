@@ -4,7 +4,9 @@ $output = "index.html";
 $html = "<!DOCTYPE html>
 <html dir='rtl' lang='ckb'>
 <head>
-<title>ڕەشنووسەکانی ئاڵەکۆک</title>
+<title>
+ڕەشنووسەکانی ئاڵەکۆک
+</title>
 <meta charset='utf-8'>
 <meta name='viewport' content='width=device-width'>
 <style>
@@ -58,10 +60,17 @@ font-size:1rem;
 </head>
 <body>
 <header>
-<h1>ڕەشنووسەکانم 
-<sup><a href='https://github.com/allekok/drafts'>کۆد</a></sup>
+<h1>
+ڕەشنووسەکانم 
+<sup>
+<a href='https://github.com/allekok/drafts'>
+کۆد
+</a>
+</sup>
 </h1>
-</header>";
+</header>
+<main>
+";
 
 $inputs = array_diff(scandir("."), [".", "..", "dew", "LICENSE", "html",
 				    ".git", "index.html",
@@ -75,17 +84,19 @@ foreach($inputs as $input) {
 	$content = read_file($f);
 	fclose($f);
 	$content = str_replace(["&lt;ltr&gt;", "&lt;/ltr&gt;", "\n\n"],
-			       ["<span class='ltr'>", "</span>", "<br>"],
+			       ["<span class='ltr'>", "</span>", "\n<br>\n"],
 			       $content);
-	$html .= "<article id='$input'>" .
-		 "<a class='link' href='#$input'>" .
-		 "<h1>$title</h1>" .
-		 "</a>" .
-		 "<p>$content</p>" .
-		 "</article>";
+	$html .= "<article id='a$input'>\n" .
+		 "<a class='link' href='#a$input'>\n" .
+		 "<h1>\n$title</h1>\n" .
+		 "</a>\n" .
+		 "<p>$content</p>\n" .
+		 "</article>\n";
 }
 
-$html .= "</body></html>";
+$html .= "</main>
+</body>
+</html>";
 
 file_put_contents($output, $html);
 
