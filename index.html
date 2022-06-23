@@ -76,6 +76,35 @@ color:#0e0;
 </h1>
 </header>
 <main>
+<article id='a26'>
+<a class='link' href='#a26'>
+<h1>
+چاپگەری Epson لە Arch linux دا
+</h1>
+</a>
+<p>
+لەو ڕۆژانەدا دەمهەویست چاپگەرێکی ڕەنگی &quot;Epson Stylus Photo 1410&quot; لە
+کامپیوتێرەکەم وەسڵ کەم. ئەووەڵ چووم درایوێرەکەم دیتەوە. دوای گەڕانێکی
+چووک، لە AUR دا پەکەیجێکم دیتەوە بە نێوی
+&quot;epson-inkjet-printer-escpr&quot;. دامگرتە سەر کامپیوتێرەکەم و
+داممەزراند. بەڵام کاتێک دەمهەویست شتی پێ چاپ کەم کاری نەدەکرد. چوومە
+سەر سێروێری &quot;CUPS&quot; بە نیشانیی &quot;http://localhost:631&quot; دیتم خەتای
+داوە. خەتایەکەش ئەوە بوو:
+<br>
+<span class='ltr'>
+File &quot;/usr/lib/cups/filter/commandtoepson&quot; not available: No such file or directory
+</span>
+<br>
+هاتم لینکێکم لە فایلی &quot;/usr/lib/cups/filter/epson-escpr-wrapper&quot; ڕا کە
+بەشێک لە درایوێرەکە بوو، کێشایە سەر نیشانی سەرەوە:
+<br>
+<span class='ltr'>
+ln -s /usr/lib/cups/filter/epson-escpr-wrapper /usr/lib/cups/filter/commandtoepson
+</span>
+<br>
+دوای ئەو کارە چاپگەرەکە بێ‌موشکیل کاری کرد.
+</p>
+</article>
 <article id='a25'>
 <a class='link' href='#a25'>
 <h1>
